@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 import '../../data/database/databasehelper.dart';
-import '../../data/model/book_model.dart';
+import '../../domain/model/book_model.dart';
 
 class HomeController extends GetxController {
 
