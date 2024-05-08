@@ -1,12 +1,9 @@
-
 class HadithListModel {
-
   List<HadithData>? data;
 
   HadithListModel({this.data});
 
   HadithListModel.fromJson(List<dynamic> json) {
-
     data = <HadithData>[];
     for (var v in json) {
       data!.add(HadithData.fromJson(v));
@@ -21,8 +18,6 @@ class HadithListModel {
     return data;
   }
 }
-
-
 
 class HadithData {
   int? hadithId;
@@ -41,18 +36,18 @@ class HadithData {
 
   HadithData(
       {this.hadithId,
-        this.bookId,
-        this.bookName,
-        this.chapterId,
-        this.sectionId,
-        this.narrator,
-        this.bn,
-        this.ar,
-        this.arDiacless,
-        this.note,
-        this.gradeId,
-        this.grade,
-        this.gradeColor});
+      this.bookId,
+      this.bookName,
+      this.chapterId,
+      this.sectionId,
+      this.narrator,
+      this.bn,
+      this.ar,
+      this.arDiacless,
+      this.note,
+      this.gradeId,
+      this.grade,
+      this.gradeColor});
 
   HadithData.fromJson(Map<String, dynamic> json) {
     hadithId = json['hadith_id'];

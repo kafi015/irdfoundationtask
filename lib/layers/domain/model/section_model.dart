@@ -1,12 +1,9 @@
-
 class SectionListModel {
-
   List<SectionData>? data;
 
   SectionListModel({this.data});
 
   SectionListModel.fromJson(List<dynamic> json) {
-
     data = <SectionData>[];
     for (var v in json) {
       data!.add(SectionData.fromJson(v));
@@ -34,13 +31,13 @@ class SectionData {
 
   SectionData(
       {this.id,
-        this.bookId,
-        this.bookName,
-        this.chapterId,
-        this.sectionId,
-        this.title,
-        this.preface,
-        this.number});
+      this.bookId,
+      this.bookName,
+      this.chapterId,
+      this.sectionId,
+      this.title,
+      this.preface,
+      this.number});
 
   SectionData.fromJson(Map<String, dynamic> json) {
     id = json['id'];

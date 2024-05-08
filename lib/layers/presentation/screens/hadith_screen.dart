@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:irdfoundationtask/layers/presentation/getx_manager/hadith_screen_controller.dart';
-
 import '../utils/constants.dart';
 import '../widgets/hexagon_painter.dart';
 
@@ -63,7 +62,7 @@ class HadithScreen extends StatelessWidget {
               child: hadithScreenController.getSectionItemInProgress
                   ? const Center(child: CircularProgressIndicator())
                   : ListView.builder(
-                physics: const BouncingScrollPhysics(),
+                      physics: const BouncingScrollPhysics(),
                       itemCount:
                           hadithScreenController.sectionListModel.data!.length,
                       itemBuilder: (context, index) {
@@ -85,15 +84,17 @@ class HadithScreen extends StatelessWidget {
                               child: ListTile(
                                 title: Text(
                                   '${section.title}',
-                                  style: AppConstants.cardTitle.copyWith(color: AppConstants.primaryColor), // Make section number green
-                                ), // Make section number green
+                                  style: AppConstants.cardTitle.copyWith(
+                                      color: AppConstants
+                                          .primaryColor), // Make section number green
+                                ),
                                 subtitle: section.preface != ""
                                     ? Column(
                                         crossAxisAlignment:
                                             CrossAxisAlignment.start,
                                         children: [
                                           if (section.preface != "")
-                                            const Divider(), // Add a divider if subtitle is not null
+                                            const Divider(),
                                           Text(
                                             '${section.preface}', // Subtitle
                                             style: AppConstants.bnTextStyle,
@@ -105,7 +106,6 @@ class HadithScreen extends StatelessWidget {
                               ),
                             ),
 
-                            // Hadiths within the same section
                             ListView.builder(
                               shrinkWrap: true,
                               physics: const NeverScrollableScrollPhysics(),
@@ -123,12 +123,12 @@ class HadithScreen extends StatelessWidget {
                                         children: [
                                           Container(
                                             margin: const EdgeInsets.all(8),
-                                            width: 35, // Adjust size as needed
-                                            height: 37, // Adjust size as needed
+                                            width: 35,
+                                            height: 37,
                                             child: CustomPaint(
                                               painter: HexagonPainter(
-                                                  color:
-                                                      AppConstants.secondaryColor,
+                                                  color: AppConstants
+                                                      .secondaryColor,
                                                   abvrCode: "B"),
                                             ),
                                           ),
@@ -138,11 +138,11 @@ class HadithScreen extends StatelessWidget {
                                                 CrossAxisAlignment.start,
                                             children: [
                                               Text(
-                                                title, // Placeholder text, replace with actual data
+                                                title,
                                                 style: AppConstants.cardTitle,
                                               ),
                                               Text(
-                                                'হাদিস: ${hadith.hadithId}', // Placeholder text, replace with actual data
+                                                'হাদিস: ${hadith.hadithId}',
                                                 style: TextStyle(
                                                     fontSize: 14,
                                                     fontWeight: FontWeight.w600,
@@ -153,13 +153,13 @@ class HadithScreen extends StatelessWidget {
                                           ),
                                           const Spacer(),
                                           Container(
-                                            width: 73, // Adjust size as needed
-                                            height: 26, // Adjust size as needed
+                                            width: 73,
+                                            height: 26,
                                             decoration: BoxDecoration(
-                                              color: AppConstants
-                                                  .secondaryColor, // Filled color for hadith grade
-                                              borderRadius: BorderRadius.circular(
-                                                  20), // Set border radius to 50
+                                              color:
+                                                  AppConstants.secondaryColor,
+                                              borderRadius:
+                                                  BorderRadius.circular(20),
                                             ),
                                             child: Center(
                                                 child: Text(
@@ -208,7 +208,7 @@ class HadithScreen extends StatelessWidget {
                                                                     Icons
                                                                         .close))
                                                           ],
-                                                        ), // Placeholder text, replace with actual data
+                                                        ),
                                                         const SizedBox(
                                                             height: 16),
                                                         ListTile(
@@ -216,9 +216,7 @@ class HadithScreen extends StatelessWidget {
                                                               .bookmark_outline),
                                                           title: const Text(
                                                               'Add Collections'),
-                                                          onTap: () {
-                                                            // Handle Add Collections action
-                                                          },
+                                                          onTap: () {},
                                                         ),
                                                         ListTile(
                                                           leading: const Icon(
@@ -226,9 +224,7 @@ class HadithScreen extends StatelessWidget {
                                                                   .copy_outlined),
                                                           title: const Text(
                                                               'Copy Hadith BD'),
-                                                          onTap: () {
-                                                            // Handle Copy Hadith BD action
-                                                          },
+                                                          onTap: () {},
                                                         ),
                                                         ListTile(
                                                           leading: const Icon(
@@ -236,9 +232,7 @@ class HadithScreen extends StatelessWidget {
                                                                   .copy_outlined),
                                                           title: const Text(
                                                               'Copy Hadith AR'),
-                                                          onTap: () {
-                                                            // Handle Copy Hadith AR action
-                                                          },
+                                                          onTap: () {},
                                                         ),
                                                         ListTile(
                                                           leading: const Icon(
@@ -246,27 +240,21 @@ class HadithScreen extends StatelessWidget {
                                                                   .copy_outlined),
                                                           title: const Text(
                                                               'Copy'),
-                                                          onTap: () {
-                                                            // Handle Copy action
-                                                          },
+                                                          onTap: () {},
                                                         ),
                                                         ListTile(
                                                           leading: const Icon(Icons
                                                               .share_outlined),
                                                           title: const Text(
                                                               'Share'),
-                                                          onTap: () {
-                                                            // Handle Share action
-                                                          },
+                                                          onTap: () {},
                                                         ),
                                                         ListTile(
                                                           leading: const Icon(Icons
                                                               .report_outlined),
                                                           title: const Text(
                                                               'Report'),
-                                                          onTap: () {
-                                                            // Handle Report action
-                                                          },
+                                                          onTap: () {},
                                                         ),
                                                       ],
                                                     ),
@@ -304,18 +292,25 @@ class HadithScreen extends StatelessWidget {
                                             ),
                                             hadith.note != ""
                                                 ? Column(
-                                              crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                              children: [
-                                                if (hadith.note != "")
-                                                  const Divider(), // Add a divider if subtitle is not null
-                                                Text(
-                                                  '${hadith.note}', // Subtitle
-                                                  style: AppConstants.bnTextStyle.copyWith(color: Colors.grey.shade600),
-                                                  textAlign: TextAlign.justify,
-                                                ),
-                                              ],
-                                            )
+                                                    crossAxisAlignment:
+                                                        CrossAxisAlignment
+                                                            .start,
+                                                    children: [
+                                                      if (hadith.note != "")
+                                                        const Divider(),
+                                                      Text(
+                                                        '${hadith.note}',
+                                                        style: AppConstants
+                                                            .bnTextStyle
+                                                            .copyWith(
+                                                                color: Colors
+                                                                    .grey
+                                                                    .shade600),
+                                                        textAlign:
+                                                            TextAlign.justify,
+                                                      ),
+                                                    ],
+                                                  )
                                                 : const SizedBox(),
                                           ],
                                         ),

@@ -71,10 +71,8 @@ class HomeScreen extends StatelessWidget {
                 child: Text(
                   'নবী করীম (সাল্লাল্লাহু \'আলায়হি ওয়া সাল্লাম) বলেছেন, "যে ব্যক্তি আমার ন্যায় এরূপ অযু করে একাগ্র চিত্তে দু\'রাকআত নামায পড়বে, '
                   'তার পূর্বের সকল গোনাহ মাফ করে দেওয়া হবে।” (বুখারী ১৫৯, মুসলিম ৫৩৯)"\n[১০০ সুসাব্যস্ত হাদিস]',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontFamily: 'kalpurush'
-                  ),
+                  style:
+                      TextStyle(color: Colors.white, fontFamily: 'kalpurush'),
                   textAlign: TextAlign.center,
                 ),
               ),
@@ -151,7 +149,7 @@ class HomeScreen extends StatelessWidget {
                           height: 10,
                         ),
                         Text(
-                          'সদকা',
+                          'সদাকা',
                           style: AppConstants.cardTitle,
                         ),
                       ],
@@ -219,13 +217,21 @@ class HomeScreen extends StatelessWidget {
                             '${homeController.bookListModel.data?[index].title}',
                             style: AppConstants.cardTitle,
                           ),
-                          subtitle: const Text('ইমাম বুখারি',style: AppConstants.bnTextStyle,),
+                          subtitle: const Text(
+                            'ইমাম বুখারি',
+                            style: AppConstants.bnTextStyle,
+                          ),
                           trailing: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
-                                  '${homeController.bookListModel.data?[index].numberOfHadis}',style: AppConstants.bnTextStyle,),
-                              const Text('হাদিস',style: AppConstants.bnTextStyle,),
+                                '${homeController.bookListModel.data?[index].numberOfHadis}',
+                                style: AppConstants.bnTextStyle,
+                              ),
+                              const Text(
+                                'হাদিস',
+                                style: AppConstants.bnTextStyle,
+                              ),
                             ],
                           ),
                         ),

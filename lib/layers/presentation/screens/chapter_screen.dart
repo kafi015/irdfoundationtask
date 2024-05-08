@@ -19,7 +19,6 @@ class ChapterScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
@@ -65,9 +64,9 @@ class ChapterScreen extends StatelessWidget {
           child: GetBuilder<ChapterScreenController>(
               builder: (chapterScreenController) {
             return Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 8.0,vertical: 8.0),
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 8.0, vertical: 8.0),
               child: Column(
-
                 children: [
                   Card(
                     elevation: 1,
@@ -77,20 +76,29 @@ class ChapterScreen extends StatelessWidget {
                       decoration: const InputDecoration(
                         hintText: 'অধ্যায় সার্চ করুন',
                         hintStyle: AppConstants.bnTextStyle,
-                        suffixIcon: Icon(Icons.search_sharp,size: 40,color: Colors.blueGrey,),
+                        suffixIcon: Icon(
+                          Icons.search_sharp,
+                          size: 40,
+                          color: Colors.blueGrey,
+                        ),
                         prefixIconColor: AppConstants.primaryColor,
-                        //border: OutlineInputBorder(),
                         enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(width: 0,color: Colors.white,style: BorderStyle.none)
-                        ),
+                            borderSide: BorderSide(
+                                width: 0,
+                                color: Colors.white,
+                                style: BorderStyle.none)),
                         focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(width: 0,color: Colors.white,style: BorderStyle.none)
-                        ),
+                            borderSide: BorderSide(
+                                width: 0,
+                                color: Colors.white,
+                                style: BorderStyle.none)),
                         labelStyle: TextStyle(color: AppConstants.primaryColor),
                       ),
                     ),
                   ),
-                  const SizedBox(height: 10,),
+                  const SizedBox(
+                    height: 10,
+                  ),
                   Expanded(
                     child: chapterScreenController.getChapterItemInProgress
                         ? const Center(child: LinearProgressIndicator())
@@ -98,8 +106,8 @@ class ChapterScreen extends StatelessWidget {
                             itemCount:
                                 chapterScreenController.filteredChapters.length,
                             itemBuilder: (context, index) {
-                              final chapter =
-                                  chapterScreenController.filteredChapters[index];
+                              final chapter = chapterScreenController
+                                  .filteredChapters[index];
                               return InkWell(
                                 onTap: () {
                                   Get.to(HadithScreen(
@@ -115,8 +123,8 @@ class ChapterScreen extends StatelessWidget {
                                     child: ListTile(
                                       leading: Container(
                                         margin: const EdgeInsets.all(8),
-                                        width: 35, // Adjust size as needed
-                                        height: 37, // Adjust size as needed
+                                        width: 35,
+                                        height: 37,
                                         child: CustomPaint(
                                           painter: HexagonPainter(
                                             color: AppConstants.primaryColor,
@@ -127,17 +135,14 @@ class ChapterScreen extends StatelessWidget {
                                       title: Text(
                                         '${chapter.title}',
                                         style: AppConstants.cardTitle,
-                                        overflow: TextOverflow
-                                            .ellipsis, // Define how to handle overflow
-                                        maxLines:
-                                            2, // Maximum number of lines to display
+                                        overflow: TextOverflow.ellipsis,
+                                        maxLines: 2,
                                       ),
                                       subtitle: Text(
                                         "হাদিসের রেঞ্জ: ${chapter.hadisRange}",
                                         style: AppConstants.bnTextStyle,
                                         overflow: TextOverflow.ellipsis,
-                                        maxLines: 2, // Adjust as needed
-
+                                        maxLines: 2,
                                       ),
                                     ),
                                   ),

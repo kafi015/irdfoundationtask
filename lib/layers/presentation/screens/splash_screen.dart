@@ -14,18 +14,16 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
-
   @override
   void initState() {
     super.initState();
-    Future.delayed(const Duration(seconds: 1))
-        .then((value) => {
-        Get.find<HomeController>().getBookList(),
-        Get.find<ChapterScreenController>().getChapterList(),
-        Get.find<HadithScreenController>().getSectionList(),
-        Get.find<HadithScreenController>().getHadithList(),
+    Future.delayed(const Duration(seconds: 1)).then((value) => {
+          Get.find<HomeController>().getBookList(),
+          Get.find<ChapterScreenController>().getChapterList(),
+          Get.find<HadithScreenController>().getSectionList(),
+          Get.find<HadithScreenController>().getHadithList(),
           Get.offAll(const HomeScreen())
-    });
+        });
   }
 
   @override
@@ -36,11 +34,9 @@ class _SplashScreenState extends State<SplashScreen> {
           height: double.infinity,
           width: double.infinity,
           decoration: const BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage('assets/splash_screen.jpg'),
-                  fit: BoxFit.fill
-            )
-          ),
+              image: DecorationImage(
+                  image: AssetImage('assets/splash_screen.jpg'),
+                  fit: BoxFit.fill)),
         ),
       ),
     );

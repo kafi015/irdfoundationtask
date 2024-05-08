@@ -1,27 +1,14 @@
-
-
 class ChapterListModel {
-
   List<ChapterData>? data;
 
   ChapterListModel({this.data});
 
   ChapterListModel.fromJson(List<dynamic> json) {
-
     data = <ChapterData>[];
     for (var v in json) {
       data!.add(ChapterData.fromJson(v));
     }
   }
-
-  // BookListModel.fromJson(Map<String, dynamic> json) {
-  //   if (json['data'] != null) {
-  //     data = <BookData>[];
-  //     json['data'].forEach((v) {
-  //       data!.add(BookData.fromJson(v));
-  //     });
-  //   }
-  // }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = <String, dynamic>{};
@@ -31,9 +18,6 @@ class ChapterListModel {
     return data;
   }
 }
-
-
-
 
 class ChapterData {
   int? id;
@@ -46,12 +30,12 @@ class ChapterData {
 
   ChapterData(
       {this.id,
-        this.chapterId,
-        this.bookId,
-        this.title,
-        this.number,
-        this.hadisRange,
-        this.bookName});
+      this.chapterId,
+      this.bookId,
+      this.title,
+      this.number,
+      this.hadisRange,
+      this.bookName});
 
   ChapterData.fromJson(Map<String, dynamic> json) {
     id = json['id'];

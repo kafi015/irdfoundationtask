@@ -1,26 +1,14 @@
-
 class BookListModel {
-
   List<BookData>? data;
 
   BookListModel({this.data});
 
   BookListModel.fromJson(List<dynamic> json) {
-
     data = <BookData>[];
     for (var v in json) {
       data!.add(BookData.fromJson(v));
     }
   }
-
-  // BookListModel.fromJson(Map<String, dynamic> json) {
-  //   if (json['data'] != null) {
-  //     data = <BookData>[];
-  //     json['data'].forEach((v) {
-  //       data!.add(BookData.fromJson(v));
-  //     });
-  //   }
-  // }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = <String, dynamic>{};
@@ -30,7 +18,6 @@ class BookListModel {
     return data;
   }
 }
-
 
 class BookData {
   int? id;
@@ -43,12 +30,12 @@ class BookData {
 
   BookData(
       {this.id,
-        this.title,
-        this.titleAr,
-        this.numberOfHadis,
-        this.abvrCode,
-        this.bookName,
-        this.bookDescr});
+      this.title,
+      this.titleAr,
+      this.numberOfHadis,
+      this.abvrCode,
+      this.bookName,
+      this.bookDescr});
 
   BookData.fromJson(Map<String, dynamic> json) {
     id = json['id'];

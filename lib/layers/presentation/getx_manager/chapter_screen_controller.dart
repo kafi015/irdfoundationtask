@@ -23,7 +23,7 @@ class ChapterScreenController extends GetxController {
         await DatabaseHelper.getDataFromDatabase('chapter');
     _getChapterItemInProgress = false;
 
-    //print(chapterList);
+    log(chapterList.toString());
 
     if (chapterList.isNotEmpty) {
       _chapterListModel = ChapterListModel.fromJson(chapterList);
@@ -38,16 +38,11 @@ class ChapterScreenController extends GetxController {
   }
 
   void filterChapter(String value) {
-    // Filter chapters based on the search value
-    // _filteredChapters = chapterListModel.data.where((chapter) =>
-    //     chapter.title.toLowerCase().contains(value.toLowerCase())).toList()
-
     _getChapterItemInProgress = true;
     update();
     log(chapterListModel.data![0].title.toString());
     _filteredChapters = chapterListModel.data!
         .where((chapter) =>
-
             chapter.title!.toLowerCase().contains(value.toLowerCase()))
         .toList();
     log(_filteredChapters.toString());
