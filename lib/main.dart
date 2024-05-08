@@ -5,8 +5,6 @@ import 'package:irdfoundationtask/layers/presentation/getx_manager/hadith_screen
 import 'package:irdfoundationtask/layers/presentation/getx_manager/home_controller.dart';
 import 'package:irdfoundationtask/layers/presentation/screens/splash_screen.dart';
 
-
-
 void main() {
   runApp(const MyApp());
 }
@@ -16,12 +14,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-   // DatabaseManager.initDatabase(); // Initialize the database when the app starts
-
     return GetMaterialApp(
       initialBinding: GetxBinding(),
       debugShowMaterialGrid: false,
-      title:"IRD Foundation",
+      title: "IRD Foundation",
       debugShowCheckedModeBanner: false,
       home: const SplashScreen(),
       theme: ThemeData(primarySwatch: Colors.blue),
@@ -29,11 +25,10 @@ class MyApp extends StatelessWidget {
   }
 }
 
-
 class GetxBinding extends Bindings {
   @override
   void dependencies() {
-    Get.put( HomeController());
+    Get.put(HomeController());
     Get.put(ChapterScreenController());
     Get.put(HadithScreenController());
   }
