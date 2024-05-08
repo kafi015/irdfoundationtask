@@ -15,16 +15,16 @@ class HomeController extends GetxController {
   Future<bool> getBookList() async {
     _getBookItemInProgress = true;
     update();
-    List<Map<String, dynamic>> bookList  = await DatabaseHelper.getDataFromDatabase();
+    List<Map<String, dynamic>> bookList  = await DatabaseHelper.getDataFromDatabase('books');
     _getBookItemInProgress = false;
 
     if (bookList.isNotEmpty) {
 
-      print('bookList');
-      print(bookList);
+      //print('bookList');
+      //print(bookList);
       _bookListModel = BookListModel.fromJson(bookList);
-      print('_bookListModel.data');
-      print(_bookListModel.data);
+      // print('_bookListModel.data');
+      // print(_bookListModel.data);
       update();
       return true;
     } else {
