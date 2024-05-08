@@ -45,7 +45,7 @@ class ChapterScreen extends StatelessWidget {
             ),
             Text(
               "$noOfHadith টি হাদিস",
-              style: const TextStyle(color: Colors.white, fontSize: 16),
+              style: AppConstants.bnTextStyle.copyWith(color: Colors.white),
             ),
           ],
         ),
@@ -76,6 +76,7 @@ class ChapterScreen extends StatelessWidget {
                       onChanged: chapterScreenController.filterChapter,
                       decoration: const InputDecoration(
                         hintText: 'অধ্যায় সার্চ করুন',
+                        hintStyle: AppConstants.bnTextStyle,
                         suffixIcon: Icon(Icons.search_sharp,size: 40,color: Colors.blueGrey,),
                         prefixIconColor: AppConstants.primaryColor,
                         //border: OutlineInputBorder(),
@@ -133,6 +134,7 @@ class ChapterScreen extends StatelessWidget {
                                       ),
                                       subtitle: Text(
                                         "হাদিসের রেঞ্জ: ${chapter.hadisRange}",
+                                        style: AppConstants.bnTextStyle,
                                         overflow: TextOverflow.ellipsis,
                                         maxLines: 2, // Adjust as needed
 

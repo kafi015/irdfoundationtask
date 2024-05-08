@@ -39,7 +39,7 @@ class HadithScreen extends StatelessWidget {
             ),
             Text(
               chapterName,
-              style: const TextStyle(color: Colors.white, fontSize: 16),
+              style: AppConstants.bnTextStyle.copyWith(color: Colors.white),
             ),
           ],
         ),
@@ -63,6 +63,7 @@ class HadithScreen extends StatelessWidget {
               child: hadithScreenController.getSectionItemInProgress
                   ? const Center(child: CircularProgressIndicator())
                   : ListView.builder(
+                physics: const BouncingScrollPhysics(),
                       itemCount:
                           hadithScreenController.sectionListModel.data!.length,
                       itemBuilder: (context, index) {
@@ -84,10 +85,7 @@ class HadithScreen extends StatelessWidget {
                               child: ListTile(
                                 title: Text(
                                   '${section.title}',
-                                  style: const TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 16,
-                                      color: AppConstants.primaryColor), // Make section number green
+                                  style: AppConstants.cardTitle.copyWith(color: AppConstants.primaryColor), // Make section number green
                                 ), // Make section number green
                                 subtitle: section.preface != ""
                                     ? Column(
@@ -98,9 +96,8 @@ class HadithScreen extends StatelessWidget {
                                             const Divider(), // Add a divider if subtitle is not null
                                           Text(
                                             '${section.preface}', // Subtitle
-                                            style: TextStyle(
-                                                color: Colors.grey.shade700,
-                                                fontSize: 15),
+                                            style: AppConstants.bnTextStyle,
+                                            textAlign: TextAlign.justify,
                                           ),
                                         ],
                                       )
@@ -305,6 +302,21 @@ class HadithScreen extends StatelessWidget {
                                               style: AppConstants.bnTextStyle,
                                               textAlign: TextAlign.justify,
                                             ),
+                                            hadith.note != ""
+                                                ? Column(
+                                              crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                              children: [
+                                                if (hadith.note != "")
+                                                  const Divider(), // Add a divider if subtitle is not null
+                                                Text(
+                                                  '${hadith.note}', // Subtitle
+                                                  style: AppConstants.bnTextStyle.copyWith(color: Colors.grey.shade600),
+                                                  textAlign: TextAlign.justify,
+                                                ),
+                                              ],
+                                            )
+                                                : const SizedBox(),
                                           ],
                                         ),
                                       ),

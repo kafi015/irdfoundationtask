@@ -65,15 +65,19 @@ class HomeScreen extends StatelessWidget {
                       borderRadius: BorderRadius.circular(20.0)),
                 ),
               ),
-             const Padding(
-               padding: EdgeInsets.symmetric(horizontal: 20.0,vertical: 140.0),
-               child: Text(
-                    'নবী করীম (সাল্লাল্লাহু \'আলায়হি ওয়া সাল্লাম) বলেছেন, "যে ব্যক্তি আমার ন্যায় এরূপ অযু করে একাগ্র চিত্তে দু\'রাকআত নামায পড়বে, '
-                        'তার পূর্বের সকল গোনাহ মাফ করে দেওয়া হবে।” (বুখারী ১৫৯, মুসলিম ৫৩৯)"\n[১০০ সুসাব্যস্ত হাদিস]',
-               style: TextStyle(color: Colors.white,),
-                 textAlign: TextAlign.center,
-               ),
-             ),
+              const Padding(
+                padding:
+                    EdgeInsets.symmetric(horizontal: 20.0, vertical: 140.0),
+                child: Text(
+                  'নবী করীম (সাল্লাল্লাহু \'আলায়হি ওয়া সাল্লাম) বলেছেন, "যে ব্যক্তি আমার ন্যায় এরূপ অযু করে একাগ্র চিত্তে দু\'রাকআত নামায পড়বে, '
+                  'তার পূর্বের সকল গোনাহ মাফ করে দেওয়া হবে।” (বুখারী ১৫৯, মুসলিম ৫৩৯)"\n[১০০ সুসাব্যস্ত হাদিস]',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontFamily: 'kalpurush'
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ),
               const Padding(
                 padding: EdgeInsets.only(top: 290.0, left: 50, right: 50),
                 child: Row(
@@ -215,13 +219,13 @@ class HomeScreen extends StatelessWidget {
                             '${homeController.bookListModel.data?[index].title}',
                             style: AppConstants.cardTitle,
                           ),
-                          subtitle: const Text('ইমাম বুখারি'),
+                          subtitle: const Text('ইমাম বুখারি',style: AppConstants.bnTextStyle,),
                           trailing: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
-                                  '${homeController.bookListModel.data?[index].numberOfHadis}'),
-                              const Text('হাদিস'),
+                                  '${homeController.bookListModel.data?[index].numberOfHadis}',style: AppConstants.bnTextStyle,),
+                              const Text('হাদিস',style: AppConstants.bnTextStyle,),
                             ],
                           ),
                         ),

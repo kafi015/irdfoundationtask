@@ -18,25 +18,29 @@ class AppConstants {
   static const TextStyle appBarTitle = TextStyle(
     fontSize: 22,
     fontWeight: FontWeight.w600,
-    color: Colors.white
+    color: Colors.white,
+      fontFamily: 'kalpurush'
     // fontFamily: 'BengaliFont', // todo Replace with your Bengali font
   );
 
   static const TextStyle cardTitle = TextStyle(
     fontSize: 17,
     fontWeight: FontWeight.w600,
-    color: Colors.black
+    color: Colors.black,
+      fontFamily: 'kalpurush'
     // fontFamily: 'BengaliFont', // todo Replace with your Bengali font
   );
 
   static const TextStyle arTextStyle = TextStyle(
     fontSize: 22,
     color: Colors.black,
+    fontFamily: 'kfgqpchafsuthmanicscript_regular'
     // fontFamily: 'ArabicFont', // todo Replace with your Arabic font
   );
 
   static const TextStyle bnTextStyle = TextStyle(
     fontSize: 17,
+      fontFamily: 'kalpurush'
     // fontFamily: 'BengaliFont', // todo Replace with your Bengali font
   );
 
